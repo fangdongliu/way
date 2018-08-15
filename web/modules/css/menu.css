@@ -1,0 +1,95 @@
+#menu{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height:calc(100% - 40px);
+    z-index: 9999;
+    width:200px;
+    border-right: 1px solid rgba(0,0,0,0.24);
+    display: block;
+    position: absolute;
+}
+
+#menu li{
+    list-style: none;
+    line-height: 30px;
+    font-size:22px;
+}
+
+/*隐藏input*/
+#menu input{
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    z-index: 2;
+    cursor: pointer;
+    height: 1em;
+    width:1em;
+    top: 0;
+}
+
+/*清除所有展开的子菜单的display*/
+#menu li input + ol{display: none;}
+/*当input被选中时，给所有展开的子菜单设置样式*/
+#menu input:checked + ol {
+    height: auto;
+    display: block;
+}
+#menu input:checked + ol > li { height: auto;}
+/*末层菜单为A标签，设置样式*/
+
+#menu .folderTwo:hover, .folderTwo:focus{
+    background-color:#e0e0e0;
+    color:#333;
+}
+/*不同层级的菜单字体大小不同*/
+#menu .folderOne{
+    padding:10px;
+    font-size: 18px;
+    color:#414a51;
+    width:calc(100% - 20px);
+    font-weight: bold;
+    display: block;
+    transition-duration: 0.3s;
+}
+#menu .folderTwo{
+    transition-duration: 0.3s;
+    padding:5px 5px 5px 20px;
+    text-decoration:none;
+    margin-left: 10px;
+    display: block;
+    color:#333333;
+    white-space:nowrap;
+    overflow:hidden;
+    border-left:1px solid black;
+    text-overflow: ellipsis;
+    font-size:16px;
+}
+#menu .folderThree{font-size:14px;}
+
+#menu .folderOne:hover, .folderOne:focus{
+    background-color:#f0f0f0;
+    color:#222;
+}
+
+#menu .selectedOne{
+    padding:10px;
+    font-size: 18px;
+    width:calc(100% - 20px);
+    font-weight: bold;
+    color:lightblue;
+    display: block;
+}
+
+#menu .selectedTwo{
+    background: #e0e0e0;
+    font-size:16px;
+    color:darkblue;
+    transition-duration: 0.3s;
+    padding:5px 5px 5px 20px;
+    text-decoration:none;
+    margin-left: 9px;
+    display: block;
+    white-space:nowrap;
+    border-left:3px solid darkblue;
+    text-overflow: ellipsis;
+}

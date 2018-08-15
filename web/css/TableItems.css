@@ -1,0 +1,46 @@
+
+
+.tableMenu a:hover{
+    background: #aaa;
+    color:white;
+    transition-duration: 0.3s;
+}
+
+.tableMenu table{
+    width: 100%;
+}
+
+.tableMenu a{
+    cursor: pointer;
+    color:darkblue;
+    margin-top: 20px;
+    padding: 5px 20px 5px 20px;
+    border-top:1px solid rgba(0,0,0,0.13);
+    border-bottom: 1px solid rgba(0,0,0,0.13);
+    display: block;
+}
+
+.tableMenu td{
+    vertical-align: top;
+    text-align: center;
+    border-left: 1px solid rgba(0,0,0,0.13);
+    padding-left: 30px;
+    padding-right: 30px;
+    border-right: 1px solid rgba(0,0,0,0.13);
+}
+
+.tablehead{
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(0,0,0,0.13);
+}
+
+.tablebottom{
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(0,0,0,0.13);
+}
+
+.tableMenu p{
+    line-height: 30px;
+}

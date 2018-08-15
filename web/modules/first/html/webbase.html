@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>网站基础</title>
+    <link rel="stylesheet" href="../../../css/universe.css">
+    <link rel="stylesheet" href="../../css/menu.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="../../codemirror-5.30.0/lib/codemirror.js"></script>
+    <link href="../../codemirror-5.30.0/lib/codemirror.css" rel="stylesheet" />
+    <script src="../../codemirror-5.30.0/mode/xml/xml.js"></script>
+    <script src="../../codemirror-5.30.0/mode/javascript/javascript.js"></script>
+    <script src="../../codemirror-5.30.0/mode/css/css.js"></script>
+    <script src="../../codemirror-5.30.0/mode/htmlmixed/htmlmixed.js"></script>
+    <script src="../../codemirror-5.30.0/addon/mode/multiplex.js"></script>
+    <script src="../../codemirror-5.30.0/mode/htmlembedded/htmlembedded.js"></script>
+    <link rel="stylesheet" href="../../css/content.css">
+</head>
+<body>
+<script>
+    window.onload = function () {
+
+        var cEditor = CodeMirror.fromTextArea(document.getElementById("code"), {
+            lineNumbers: true,
+            indentUint:4,
+            indentWithTabs:true,
+            mode: "application/x-ejs",
+            theme: "default",
+
+        });
+
+        var mac = CodeMirror.keyMap.default == CodeMirror.keyMap.macDefault;
+        CodeMirror.keyMap.default[(mac ? "Cmd" : "Ctrl") + "-Space"] = "autocomplete";
+
+    }
+</script>
+<div id="titlebar">
+    <h1>
+        移动政务必经之路
+    </h1>
+    <h4>
+        BITCS移动政务创新实验室
+    </h4>
+</div>
+<header>
+    <ul>
+        <li class="normalLabel">
+            <a href="../../../index.html">首页</a>
+        </li>
+        <li class="highlightLabel">
+            <a href="../../../modules/first/index.html">基础篇</a>
+        </li>
+
+        <li class="normalLabel">
+            <a href="../../../modules/second/index.html">进阶篇</a>
+        </li>
+        <li class="normalLabel">
+            <a href="../../../modules/third/index.html">实战篇</a>
+        </li>
+
+    </ul>
+    <div id="search">
+
+        <div class="button" style="position:absolute;top:30px;">
+            <img src="../../../image/search.png">
+        </div>
+
+    </div>
+</header>
+<content>
+    <div class="contentBlock" style="background: cadetblue;color:white;">
+        <h1>
+            网站基础
+        </h1>
+    </div>
+
+    <div class="contentBlock">
+        <ol id="menu" style="display: none">
+            <li v-for="(item,index) in items">
+                <label  v-bind:for="'folder'+index"  class="folderOne">{{item.name}}</label> <input type="checkbox" v-bind:id="'folder'+index" />
+                <ol>
+                    <li v-for="(citem,index2) in item.data">
+                        <a v-bind:href="'${RELATIVE_MENU_PATH}'+citem.a"  class="folderTwo">{{citem.name}}</a>
+                    </li>
+                </ol>
+            </li>
+        </ol>
+        <div id="content">
+            <div class="area">
+            <h2>
+                asdfgt
+            </h2>
+ <textarea id="code" style="border:2px solid black;font-size:20px;width:100%;height:200px;display: block;">
+<div class="contentBlock" style="background:cadetblue;color: white;">
+        <h1>
+            内容
+        </h1>
+        <p>
+            基础篇内容旨在帮助学生掌握基础、确定学习方向，介绍了html、css、js、Java、MySQL相关的基础内容
+        </p>
+    </div>
+        </textarea>
+            <p>
+                offsetHeight 返回元素的高度。 element.offsetWidth 返回元素的宽度。 element.offsetLeft 返回元素的水平偏移位置。 element.offsetParent 返回元素的偏移
+            </p>
+            <p>
+                offsetHeight 返回元素的高度。 element.offsetWidth 返回元素的宽度。 element.offsetLeft 返回元素的水平偏移位置。 element.offsetParent 返回元素的偏移
+            </p>
+            </div>
+            <div class="area">
+            <h2>
+                asdfgt
+            </h2>
+            <p>
+                offsetHeight 返回元素的高度。 element.offsetWidth 返回元素的宽度。 element.offsetLeft 返回元素的水平偏移位置。 element.offsetParent 返回元素的偏移
+            </p>
+            <p>
+                offsetHeight 返回元素的高度。 element.offsetWidth 返回元素的宽度。 element.offsetLeft 返回元素的水平偏移位置。 element.offsetParent 返回元素的偏移
+            </p>
+            </div>
+        </div>
+    </div>
+</content>
+<script>
+    var indexOne=0;
+    var indexTwo=0;
+</script>
+<script src="../js/menu.js"></script>
+
+</body>
+</html>
